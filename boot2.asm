@@ -170,7 +170,7 @@ clear_screen:
 		jmp clear_screen_loop_y
 
 	clear_screen_loop_y_fim:
-	iret
+	ret
 
 start:
 	mov ax, 0
@@ -197,9 +197,8 @@ start:
 	; Entrar no modo protegido
 	call protected_mode
 
-	sti
-	int 20h
-	;call clear_screen
+	;int 20h
+	call clear_screen
 
 	q: jmp q
 
